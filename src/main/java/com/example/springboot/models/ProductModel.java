@@ -4,17 +4,16 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.hateoas.RepresentationModel;
 
-import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.UUID;
 
 @Entity
-@Table(name = "TB_PRODUCTS")
+@Table(name = ProductModel.TABLE_NAME)
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class ProductModel extends RepresentationModel<ProductModel> implements Serializable {
-    private static final long serialVersionUID = 1L;
+public class ProductModel extends RepresentationModel<ProductModel> {
+    public static final String TABLE_NAME = "tb_products";
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
